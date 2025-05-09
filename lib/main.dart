@@ -7,7 +7,7 @@ import 'dart:io';
 
 void main(List<String> args) async {
   if (args.isEmpty) {
-    print("请提供参数");
+    print("使用方法：clash2singbox --sub=<name>=<url> --sub=<name>=<url> --config=<path>");
     return;
   }
 
