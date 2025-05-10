@@ -71,7 +71,8 @@
         "rules": [
           {
             "domain_regex": [
-              ".*suse\\.org\\.cn$"
+              ".*suse\\.org\\.cn$",
+              ".*xiaomi\\.eu$"
             ],
             "invert": true
           },
@@ -256,7 +257,8 @@
       },
       {
         "domain_regex": [
-          ".*suse\\.org\\.cn$"
+          ".*suse\\.org\\.cn$",
+          ".*xiaomi\\.eu$"
         ],
         "outbound": "select"
       },
