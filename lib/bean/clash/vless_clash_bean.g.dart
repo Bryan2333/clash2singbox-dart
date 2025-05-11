@@ -8,24 +8,24 @@ part of 'vless_clash_bean.dart';
 
 VlessClashBean _$VlessClashBeanFromJson(Map<String, dynamic> json) =>
     VlessClashBean()
-      ..tls = json['tls'] as bool?
-      ..network = json['network'] as String?
-      ..sni = json['sni'] as String?
       ..name = json['name'] as String
-      ..servername = json['servername'] as String?
       ..server = json['server'] as String
-      ..fingerprint = json['fingerprint'] as String?
       ..port = (json['port'] as num).toInt()
+      ..udp = json['udp'] as bool?
+      ..tls = json['tls'] as bool?
+      ..sni = json['sni'] as String?
+      ..servername = json['servername'] as String?
+      ..network = json['network'] as String?
+      ..fingerprint = json['fingerprint'] as String?
+      ..alpn =
+          (json['alpn'] as List<dynamic>?)?.map((e) => e as String).toList()
       ..h2Opts = json['h2-opts'] == null
           ? null
           : H2Options.fromJson(json['h2-opts'] as Map<String, dynamic>)
-      ..udp = json['udp'] as bool?
-      ..alpn =
-          (json['alpn'] as List<dynamic>?)?.map((e) => e as String).toList()
+      ..clientFingerprint = json['client-fingerprint'] as String?
       ..wsOpts = json['ws-opts'] == null
           ? null
           : WSOptions.fromJson(json['ws-opts'] as Map<String, dynamic>)
-      ..clientFingerprint = json['client-fingerprint'] as String?
       ..grpcOpts = json['grpc-opts'] == null
           ? null
           : GrpcOptions.fromJson(json['grpc-opts'] as Map<String, dynamic>)
@@ -36,19 +36,19 @@ VlessClashBean _$VlessClashBeanFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$VlessClashBeanToJson(VlessClashBean instance) =>
     <String, dynamic>{
-      'tls': instance.tls,
-      'network': instance.network,
-      'sni': instance.sni,
       'name': instance.name,
-      'servername': instance.servername,
       'server': instance.server,
-      'fingerprint': instance.fingerprint,
       'port': instance.port,
-      'h2-opts': instance.h2Opts,
       'udp': instance.udp,
+      'tls': instance.tls,
+      'sni': instance.sni,
+      'servername': instance.servername,
+      'network': instance.network,
+      'fingerprint': instance.fingerprint,
       'alpn': instance.alpn,
-      'ws-opts': instance.wsOpts,
+      'h2-opts': instance.h2Opts,
       'client-fingerprint': instance.clientFingerprint,
+      'ws-opts': instance.wsOpts,
       'grpc-opts': instance.grpcOpts,
       'skip-cert-verify': instance.skipCertVerify,
       'type': instance.type,

@@ -1,9 +1,9 @@
+import 'package:clash2singbox_dart/bean/clash/base_clash_bean.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'transport_clash_bean.g.dart';
 
-@JsonSerializable()
-mixin class TransportClashBean {
+mixin TransportClashBean on BaseClashBean {
   String? network;
 
   @JsonKey(name: "h2-opts")
@@ -14,13 +14,6 @@ mixin class TransportClashBean {
 
   @JsonKey(name: "grpc-opts")
   GrpcOptions? grpcOpts;
-
-  TransportClashBean();
-
-  factory TransportClashBean.fromJson(Map<String, dynamic> json) =>
-      _$TransportClashBeanFromJson(json);
-
-  Map<String, dynamic> toJson() => _$TransportClashBeanToJson(this);
 }
 
 @JsonSerializable()

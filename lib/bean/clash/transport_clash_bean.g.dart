@@ -6,27 +6,6 @@ part of 'transport_clash_bean.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-TransportClashBean _$TransportClashBeanFromJson(Map<String, dynamic> json) =>
-    TransportClashBean()
-      ..network = json['network'] as String?
-      ..h2Opts = json['h2-opts'] == null
-          ? null
-          : H2Options.fromJson(json['h2-opts'] as Map<String, dynamic>)
-      ..wsOpts = json['ws-opts'] == null
-          ? null
-          : WSOptions.fromJson(json['ws-opts'] as Map<String, dynamic>)
-      ..grpcOpts = json['grpc-opts'] == null
-          ? null
-          : GrpcOptions.fromJson(json['grpc-opts'] as Map<String, dynamic>);
-
-Map<String, dynamic> _$TransportClashBeanToJson(TransportClashBean instance) =>
-    <String, dynamic>{
-      'network': instance.network,
-      'h2-opts': instance.h2Opts,
-      'ws-opts': instance.wsOpts,
-      'grpc-opts': instance.grpcOpts,
-    };
-
 H2Options _$H2OptionsFromJson(Map<String, dynamic> json) => H2Options(
       host: (json['host'] as List<dynamic>?)?.map((e) => e as String).toList(),
       path: json['path'] as String?,

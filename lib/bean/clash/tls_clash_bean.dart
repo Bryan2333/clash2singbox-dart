@@ -1,9 +1,7 @@
+import 'package:clash2singbox_dart/bean/clash/base_clash_bean.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'tls_clash_bean.g.dart';
-
-@JsonSerializable()
-mixin class TlsClashBean {
+mixin TlsClashBean on BaseClashBean {
   bool? tls;
   String? sni;
   String? servername;
@@ -13,11 +11,4 @@ mixin class TlsClashBean {
   String? clientFingerprint;
   @JsonKey(name: "skip-cert-verify")
   bool? skipCertVerify;
-
-  TlsClashBean();
-
-  factory TlsClashBean.fromJson(Map<String, dynamic> json) =>
-      _$TlsClashBeanFromJson(json);
-
-  Map<String, dynamic> toJson() => _$TlsClashBeanToJson(this);
 }

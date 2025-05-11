@@ -1,4 +1,3 @@
-import 'package:clash2singbox_dart/bean/clash/base_clash_bean.dart';
 import 'package:clash2singbox_dart/bean/clash/tls_clash_bean.dart';
 import 'package:clash2singbox_dart/bean/singbox/tls_singbox_bean.dart';
 
@@ -21,7 +20,7 @@ TlsSingboxBean? convertTls(TlsClashBean bean) {
   } else if (bean.servername?.isNotEmpty ?? false) {
     newBean.serverName = bean.servername;
   } else {
-    newBean.serverName = (bean as BaseClashBean).server;
+    newBean.serverName = bean.server;
   }
 
   return newBean;
